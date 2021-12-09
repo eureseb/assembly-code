@@ -7,8 +7,7 @@
 .STACK 100H
 
 .DATA
-    my_int dw 12 ;#DEFINE MY_INT 240
-    prompt1 db "Hello"      
+    my_int dw 240 ;#DEFINE MY_INT 240
 .CODE
     MAIN PROC   ;void main(){
 
@@ -22,10 +21,6 @@
 	mov dl,30 ;row
 	mov dh,11 ;col
 	int 10h
-	
-	mov ah,9
-	mov dx, offset prompt1
-	int 21h
 	
     mov ax,my_int  ; int num = MY_INT;               
     call TO_BINARY ; to_binary(num);
@@ -42,39 +37,8 @@
     MOV AH,4CH  ;return;
     INT 21H
 
-    MAIN ENDP   ;}
-    
-    
-    BEG PROC
-        
-	mov ah,6
-    mov al,0
-    mov bh,1Eh
-    mov cx,0
-    mov dx,184fh
-    int 10h
+    MAIN ENDP   ;}  
 
-    mov ah,6
-    mov al,0
-    mov bh,5Fh
-    mov cx,0201h
-    mov dx,084Eh
-    int 10h
-
-    mov ah,6
-    mov al,0
-    mov bh,5Fh
-    mov cx,0A01h
-    mov dx,104Eh
-    int 10h 
-    
-    
-    mov ax,0
-    mov bx, 0
-    BEG ENDP
-    
-    
-    
     TO_BINARY PROC
     mov cx,0    ;initialize count
     mov dx, 0  
