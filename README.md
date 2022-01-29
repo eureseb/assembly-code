@@ -1,2 +1,1 @@
-# Pong Game
-single player pong game with ai
+# some assignment from computer org class
